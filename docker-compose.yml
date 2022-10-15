@@ -18,8 +18,14 @@ services:
       dockerfile: Dockerfile
       context: .
       target: dev
+    environment:
+      - DATABASE_USER=${DB_USER}
+      - DATABASE_PASSWORD=${DB_PASSWORD}
+      - DATABASE_NAME=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+      - DATABASE_PORT=${DB_PORT}
     ports:
-      - 8000:8000
+      - '8000:8000'
     volumes:
       - .:/opt/app/api
     depends_on:
