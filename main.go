@@ -10,6 +10,7 @@ func main() {
 	r := routes.SetupRouter()
 
 	db := database.Init()
+
 	db.AutoMigrate(&users.UserModel{})
 
 	r.Run(":8000")

@@ -35,13 +35,9 @@ func Init() *gorm.DB {
 	}), &gorm.Config{})
 
 	if err != nil {
-		fmt.Println("db err: (Init) ", err)
+		panic("Cannot connect to DB")
 	}
 
 	DB = db
-	return DB
-}
-
-func GetDB() *gorm.DB {
 	return DB
 }
