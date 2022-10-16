@@ -10,6 +10,8 @@ services:
       - DATABASE_HOST=${DB_HOST}
     ports:
       - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     networks:
       - testgin
 
@@ -38,3 +40,6 @@ services:
 networks:
   testgin:
     driver: bridge
+
+volumes:
+  pgdata:
